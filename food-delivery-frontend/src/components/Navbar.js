@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 
 function Navbar() {
-  const { logout, user } = useAuth();
+  const { logout } = useAuth();
   const { cartCount } = useCart();
 
   return (
@@ -71,13 +71,7 @@ const navLinkStyle = {
   textDecoration: "none",
 };
 
-const userNameStyle = {
-  color: "#4b5563",
-  fontFamily:
-    "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  fontSize: "14px",
-  fontWeight: 800,
-};
+
 
 const cartBadgeStyle = {
   alignItems: "center",
