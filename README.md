@@ -4,7 +4,7 @@ Bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
 cd YOUR_REPO_NAME
 
-
+ 
 🖥️ Backend Setup (Django)
 🔹 Step 1: Go to backend folder
 Bash

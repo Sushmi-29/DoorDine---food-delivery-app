@@ -52,8 +52,15 @@ class LoginView(APIView):
         )
 
 
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        # JWT logout is handled on the client by deleting the stored token.
+        return Response({"message": "Logout successful"})
+
+
 class ProfileView(APIView):
-    authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request):

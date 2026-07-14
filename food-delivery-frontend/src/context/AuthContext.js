@@ -54,6 +54,16 @@ export function AuthProvider({ children }) {
     return response.data;
   }, []);
 
+  const logout = useCallback(async () => {
+    try {
+      await api.post("logout/");
+    } catch {
+      // Clear the browser session even if the server token is expired.
+    } finally {
+      clearSession();
+    }
+  }, [clearSession]);
+
   const refreshProfile = useCallback(async () => {
     if (!localStorage.getItem(TOKEN_STORAGE_KEY)) {
       return null;
@@ -87,7 +97,7 @@ export function AuthProvider({ children }) {
     () => ({
       isAuthenticated: Boolean(token),
       login,
-      logout: clearSession,
+      logout,
       profileLoading,
       refreshProfile,
       register,
@@ -95,8 +105,8 @@ export function AuthProvider({ children }) {
       user,
     }),
     [
-      clearSession,
       login,
+      logout,
       profileLoading,
       refreshProfile,
       register,

@@ -1,83 +1,83 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Menu from "./pages/Menu";
 import Profile from "./pages/Profile";
-import Cart from "./pages/Cart";
-import Navbar from "./components/Navbar";
-import Checkout from "./pages/Checkout";
+import Register from "./pages/Register";
 
-// 🔐 Protected Route
+function AppShell({ children }) {
+  return (
+    <>
+      <Navbar />
+      {children}
+    </>
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-
-        {/* 🔐 Protected Routes */}
         <Route
           path="/"
           element={
-            
-              <>
-              <Navbar />
-              <Home />
-              </>
-            
+            <ProtectedRoute>
+              <AppShell>
+                <Home />
+              </AppShell>
+            </ProtectedRoute>
           }
         />
-
         <Route
           path="/menu/:id"
           element={
-            
-              <>
-              <Navbar />
-              <Menu />
-              </>
-           
-      
+            <ProtectedRoute>
+              <AppShell>
+                <Menu />
+              </AppShell>
+            </ProtectedRoute>
           }
         />
-
         <Route
           path="/profile"
           element={
-           
-              <>
-              <Navbar />
-              <Profile />
-              </>
-            
+            <ProtectedRoute>
+              <AppShell>
+                <Profile />
+              </AppShell>
+            </ProtectedRoute>
           }
         />
-
         <Route
           path="/cart"
           element={
-            
-              <>
-              <Navbar />
-              <Cart />
-              </>
-            
+            <ProtectedRoute>
+              <AppShell>
+                <Cart />
+              </AppShell>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+            <ProtectedRoute>
+              <AppShell>
+                <Checkout />
+              </AppShell>
+            </ProtectedRoute>
           }
         />
 
-        <Route
-  path="/checkout"
-  element={
-    <>
-      <Navbar />
-      <Checkout />
-    </>
-  }
-/>
-
-        {/* 🚨 Default Route */}
-        <Route path="*" element={<Navigate to="/" />} />
-
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
