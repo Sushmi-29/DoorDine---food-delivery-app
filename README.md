@@ -50,31 +50,38 @@ The application is built using React for the frontend and Django REST Framework 
 
 ## 📷 Screenshots
 
-(Add screenshots here)
-
-### Home Page
-
-![Home](screenshots/home.png)
-
-### Login
+### Login 
 
 ![Login](screenshots/login.png)
 
-### Cart
+### Home 
+
+![Home](screenshots/home.png)
+
+### Restaurants 
+
+![Restaurants](screenshots/restaurants.png)
+
+### Menu 
+
+![Menu](screenshots/menu.png)
+
+### Cart 
 
 ![Cart](screenshots/cart.png)
 
----
+### Checkout 
+
+![Checkout](screenshots/checkout.png)
+
+### Profile 
+
+![Profile](screenshots/profile.png)
 
 ## 🌐 Live Demo
 
-Frontend
 
 https://door-dine-food-delivery-app.vercel.app
-
-Backend
-
-https://doordine---food-delivery-app.onrender.com
 
 ---
 
@@ -125,8 +132,9 @@ npm start
 ```
 DoorDine---food-delivery-app
 │
-├── food-delivery-backend
-├── food-delivery-frontend
+├── food-delivery-backend/
+├── food-delivery-frontend/
+├── screenshots/
 └── README.md
 ```
 
