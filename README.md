@@ -1,55 +1,137 @@
-How to Run the Project
-🔹 1. Clone the Repository
-Bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+# 🍽️ DoorDine - Food Delivery Web Application
 
- 
-🖥️ Backend Setup (Django)
-🔹 Step 1: Go to backend folder
-Bash
+## 📌 Project Description
+
+DoorDine is a full-stack food delivery web application inspired by platforms like Swiggy and Zomato. Users can browse restaurants, explore menu items, register/login securely, add items to the cart, and manage their profiles.
+
+The application is built using React for the frontend and Django REST Framework for the backend.
+
+---
+
+## 🚀 Features
+
+- User Registration
+- User Login & JWT Authentication
+- Restaurant Listing
+- Menu Item Listing
+- Food Categories
+- Shopping Cart
+- User Profile
+- Responsive UI
+- REST API Integration
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- React.js
+- React Router
+- Axios
+- CSS
+
+### Backend
+
+- Django
+- Django REST Framework
+- JWT Authentication
+
+### Database
+
+- SQLite
+
+### Deployment
+
+- Frontend: Vercel
+- Backend: Render
+
+---
+
+## 📷 Screenshots
+
+(Add screenshots here)
+
+### Home Page
+
+![Home](screenshots/home.png)
+
+### Login
+
+![Login](screenshots/login.png)
+
+### Cart
+
+![Cart](screenshots/cart.png)
+
+---
+
+## 🌐 Live Demo
+
+Frontend
+
+https://door-dine-food-delivery-app.vercel.app
+
+Backend
+
+https://doordine---food-delivery-app.onrender.com
+
+---
+
+## ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone YOUR_GITHUB_LINK
+```
+
+Go to project folder
+
+```bash
+cd DoorDine---food-delivery-app
+```
+
+### Backend
+
+```bash
 cd food-delivery-backend
-🔹 Step 2: Create virtual environment
-Bash
+
 python -m venv venv
-🔹 Step 3: Activate virtual environment
-👉 Windows:
-Bash
+
 venv\Scripts\activate
-👉 Mac/Linux:
-Bash
-source venv/bin/activate
-🔹 Step 4: Install dependencies
-Bash
+
 pip install -r requirements.txt
-🔹 Step 5: Apply migrations
-Bash
+
 python manage.py migrate
-🔹 Step 6: Run backend server
-Bash
+
 python manage.py runserver
-👉 Backend runs at:
+```
 
-http://127.0.0.1:8000/
+### Frontend
 
-
-🌐 Frontend Setup (React)
-🔹 Step 1: Open new terminal and go to frontend
-Bash
+```bash
 cd food-delivery-frontend
-🔹 Step 2: Install dependencies
-Bash
+
 npm install
-🔹 Step 3: Run frontend
-Bash
+
 npm start
-👉 Frontend runs at:
+```
 
-http://localhost:3000/
+---
 
+## 📂 Project Structure
 
-🔗 Notes
-Make sure backend is running before frontend
-API base URL should point to:
+```
+DoorDine---food-delivery-app
+│
+├── food-delivery-backend
+├── food-delivery-frontend
+└── README.md
+```
 
-http://127.0.0.1:8000/api/
+---
+
+## 👩‍💻 Author
+
+**Sushmitha Ganiga**
