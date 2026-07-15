@@ -71,13 +71,15 @@ class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all().order_by("name")
     serializer_class = CategorySerializer
 
+    permission_classes = [AllowAny]
 
 
 class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.select_related("category").all().order_by("name")
     serializer_class = RestaurantSerializer
 
-    # 🔥 ADD THIS
+    permission_classes = [AllowAny]
+    
     filter_backends = [filters.SearchFilter]
     search_fields = ['name', 'category__name']
 
@@ -94,6 +96,6 @@ class MenuItemViewSet(viewsets.ModelViewSet):
     queryset = MenuItem.objects.select_related("restaurant").all().order_by("name")
     serializer_class = MenuItemSerializer
 
-    # 🔥 ADD THIS
+    permission_classes = [AllowAny]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['is_veg']
